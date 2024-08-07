@@ -1,0 +1,1 @@
+start https://www.figma.com/proto/VNIzE91YS9FOkMVtF40ss5/clinic-management?t=Kpvq2yCIoFjtBxTz-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&node-id=85-3&starting-point-node-id=6%3A66&show-proto-sidebar=1
