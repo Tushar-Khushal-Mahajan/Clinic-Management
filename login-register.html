@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./styles/login-register.css">
+    <title>Auth.</title>
+</head>
+
+<body>
+
+    <header class="header">
+        You Are Not Logged In -
+    </header>
+
+    <main class="mainSection">
+        <section class="form-section">
+
+            <!-- Login Form -->
+            <form id="Login-Form">
+                <div class="field-container">
+                    <input type="email" class="input-field" required />
+                    <label class="label">Email</label>
+                </div>
+                <div class="field-container">
+                    <input type="password" class="input-field" required />
+                    <label class="label">Password</label>
+                </div>
+
+                <p>Don't have an account ? <a href="#" onclick="Toggle('login')">Register</a></p>
+
+                <div class="btn">
+                    <button type="submit">Submit</button>
+                    <button type="reset">Clear</button>
+                </div>
+            </form>
+
+            <!-- Register Form -->
+            <form id="Register-Form">
+                <div class="field-container">
+                    <input type="text" class="input-field" required />
+                    <label class="label">Enter Name</label>
+                </div>
+                <div class="field-container">
+                    <input type="email" class="input-field" required />
+                    <label class="label">Email</label>
+                </div>
+                <div class="field-container">
+                    <input type="number" class="input-field" required />
+                    <label class="label">Mobile No</label>
+                </div>
+                <div class="field-container">
+                    <input type="password" class="input-field" required />
+                    <label class="label">Password</label>
+                </div>
+                <div class="field-container">
+                    <input type="password" class="input-field" required />
+                    <label class="label">Confirm Password</label>
+                </div>
+
+                <p>Already have an account ? <a href="#" onclick="Toggle('register')">Log In</a></p>
+
+                <div class="btn">
+                    <button type="submit">Submit</button>
+                    <button type="reset">Clear</button>
+                </div>
+            </form>
+        </section>
+        <section class="image-section">
+            <img src="./images/login.gif" alt="">
+        </section>
+    </main>
+
+
+    <script>
+        function Toggle(name) {
+            if (name == "login") {
+                //login hide
+                document.querySelector("#Login-Form").style.display = "none";
+                document.querySelector("#Register-Form").style.display = "block";
+                //register apper
+            } else {
+                //login appr
+                document.querySelector("#Login-Form").style.display = "block";
+                document.querySelector("#Register-Form").style.display = "none";
+                //register hide
+            }
+        }
+    </script>
+</body>
+
+</html>
