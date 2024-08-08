@@ -1,0 +1,265 @@
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+    user-select: none;
+}
+
+:root {
+    --first-color: #5E50C9;
+    --secondary-color: #FF0077;
+    --warning: #FFD485;
+}
+
+body {}
+
+/* navbar styling */
+.nav {
+    margin: 20px 30px;
+    width: var(100% - 60px);
+    height: 40px;
+
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+}
+
+/* 1st nav  */
+.headingNav {
+    background-color: var(--first-color);
+}
+
+.headingNav h1 {
+    color: white;
+    padding: 0px 10px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+}
+
+/* second nav */
+.menuNav {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.menuNav .left {
+    height: 100%;
+    width: 400px;
+    padding-left: 5px;
+
+    overflow: hidden;
+
+    border-radius: 50px;
+    background-color: var(--first-color);
+    color: white;
+}
+
+.menuNav .left .searchBox {
+
+    display: flex;
+
+    background-color: transparent;
+
+    height: 100%;
+    width: 100%;
+
+}
+
+.menuNav .left .searchBox input {
+    height: 100%;
+    flex-grow: 6;
+
+    margin-left: 10px;
+
+    outline: none;
+    border: none;
+
+    background-color: transparent;
+    color: white;
+
+    font-size: 20px;
+    font-weight: lighter;
+}
+
+.menuNav .left .searchBox .searchIcon {
+    height: 100%;
+    margin-top: 4px;
+    flex-grow: 1;
+
+    font-size: 25px;
+}
+
+.menuNav .right {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+
+    gap: 20px;
+
+    height: 100%;
+    width: 500px;
+}
+
+.menuNav .right div {
+    width: 100px;
+    height: 100%;
+
+    line-height: 35px;
+
+    text-align: center;
+}
+
+
+.menuNav .right div a {
+    color: var(--first-color);
+    text-decoration: none;
+
+    display: block;
+
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.active,
+.menuNav .right div a:hover {
+    background-color: var(--first-color);
+    color: white !important;
+}
+
+/* main Section */
+.main-section {
+    width: 100%;
+    height: calc(100vh - 150px);
+
+    display: flex;
+}
+
+.main-section .left-section {
+    width: 50%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+
+    padding-left: 30px;
+}
+
+.main-section .left-section h1 {
+    font-size: 70px;
+    font-weight: bold;
+    color: var(--first-color);
+}
+
+.main-section .left-section h2 {
+    font-size: 40px;
+    font-weight: bold;
+    color: var(--secondary-color);
+
+}
+
+.main-section .left-section p {
+    font-weight: lighter;
+
+    color: rgb(80, 80, 80);
+}
+
+.main-section .left-section .btn {
+    width: 180px;
+    height: 40px;
+
+    margin-top: 50px;
+
+    background-color: var(--secondary-color);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-section .left-section .btn a {
+    color: white;
+
+    text-decoration: none;
+    font-size: 25px;
+}
+
+.main-section .right-section {
+    width: 50%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.main-section .right-section img {
+    width: 500px;
+
+    height: 500px;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+
+/* Media   Queries :- */
+@media (max-width:990px) {
+    .menuNav {
+        display: column;
+    }
+
+
+    .menuNav .left {}
+
+    .menuNav .right {
+        /* margin-left: auto; */
+    }
+}
+
+@media (max-width:850px) {
+    .nav {
+        margin: 10px 10px;
+    }
+
+    .nav .left {
+        display: none;
+
+        padding: 0;
+        margin: 0;
+    }
+
+    .nav .right {
+        margin-left: auto;
+    }
+
+    .main-section {
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+
+        margin: 0px;
+
+        overflow: scroll;
+    }
+
+    .main-section .left-section {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .main-section .right-section {
+        /* margin-top: 50px; */
+        padding: 0;
+        width: 100%;
+    }
+
+    .main-section .right-section img {
+        width: 90%;
+        object-fit: contain;
+    }
+}
