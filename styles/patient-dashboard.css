@@ -17,41 +17,8 @@ body {
     padding: 10px 10px;
 }
 
-/* header styling */
-.header {
-    height: 40px;
-    width: 500px;
-
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-
-    border-radius: 50px;
-
-    background-color: var(--first-color);
-}
-
-.header a {
-    font-size: 20px;
-    font-weight: 100;
-
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
-    color: white;
+a {
     text-decoration: none;
-}
-
-.header span {
-    display: inline-block;
-    width: 1px;
-    height: 30px;
-    background-color: white;
-
-    transform: rotate(20deg);
-}
-
-.header .active {
-    font-weight: 500;
 }
 
 /* card styling */
@@ -91,18 +58,6 @@ body {
     color: var(--first-color);
 }
 
-.main .card h3 {
+.main .card h3 a {
     color: var(--secondary-color);
-}
-
-@media (max-width:550px) {
-    .header {
-        width: 100%;
-
-        /* font-size: 2vw; */
-    }
-
-    .header a {
-        font-size: 5vw;
-    }
 }
