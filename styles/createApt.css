@@ -36,6 +36,11 @@ body {
     overflow: hidden;
 }
 
+.main .img-section img {
+
+    filter: drop-shadow(5px 10px 3px black);
+}
+
 
 .main .form-section {
     width: 50%;
