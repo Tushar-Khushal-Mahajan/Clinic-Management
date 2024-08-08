@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/createApt.css">
+
+
+    <title>Appointment</title>
+</head>
+
+<body>
+    <header class="header">
+        <a href="#">Home</a>
+        <span></span>
+        <a href="#" class="active">New Appointment</a>
+        <span></span>
+        <a href="#">My Appointments</a>
+    </header>
+
+    <main class="main">
+        <section class="img-section">
+            <img src="./images/dr.gif" />
+        </section>
+        <section class="form-section">
+            <form id="APT-FORM">
+                <div class="form-group">
+                    <label for="SEPECIALIZATION_MENU">Specialization : </label>
+                    <select name="" class="form-control" id="SEPECIALIZATION_MENU">
+                        <option value="">General</option>
+                        <option value="">Cardiologiest</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="DOCTOR_MENU">Specialization : </label>
+                    <select name="" class="form-control" id="DOCTOR_MENU">
+                        <option value="">Bharat</option>
+                        <option value="">XYZ</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="MESSAGE">Specialization : </label>
+                    <textarea id="MESSAGE" class="form-control"></textarea>
+                </div>
+                <div class="form-group btn-section">
+                    <button class="btn" type="submit">Submit</button>
+                    <button class="btn" type="reset">reset</button>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>
