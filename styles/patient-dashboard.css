@@ -1,22 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;
-
-    box-sizing: border-box;
-
-    user-select: none;
-}
-
-:root {
-    --first-color: #5E50C9;
-    --secondary-color: #FF0077;
-    --warning: #FFD485;
-}
-
-body {
-    padding: 10px 10px;
-}
-
 a {
     text-decoration: none;
 }
