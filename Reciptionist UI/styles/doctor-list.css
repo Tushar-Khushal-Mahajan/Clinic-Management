@@ -81,6 +81,15 @@ body {
     font-weight: 500;
 }
 
+.main table tr td .warn {
+    background-color: var(--warning);
+    color: black;
+}
+
+.main table tr td .success {
+    background-color: var(--first-color);
+}
+
 
 @media (max-width:550px) {
 
