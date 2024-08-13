@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../styles/commons/global-css.css">
     <link rel="stylesheet" href="../Reciptionist UI/styles/doctor-list.css">
     <link rel="stylesheet" href="../Reciptionist UI/styles/see-apt.css">
+    <link rel="stylesheet" href="../styles/commons/spinner-css.css">
 
     <style>
         * {
@@ -42,7 +43,7 @@
 
 <body>
     <header class="header ml-3">
-        <a href="#">
+        <a href="#" id="BACK_BTN">
             <i class="fa fa-chevron-left" aria-hidden="true"></i>
         </a>
     </header>
@@ -52,15 +53,15 @@
     <table class="m-3 table col-lg-5 col-sm-12">
         <tr>
             <td class="font-weight-bold">Name :</td>
-            <td>Tushar</td>
+            <td id="P_NAME"></td>
         </tr>
         <tr>
             <td class="font-weight-bold">Email :</td>
-            <td>tushar@gmail.com</td>
+            <td id="P_EMAIL"></td>
         </tr>
         <tr>
             <td class="font-weight-bold">Contact :</td>
-            <td>8648623246</td>
+            <td id="MOBILE"></td>
         </tr>
 
     </table>
@@ -68,7 +69,7 @@
     <!-- SearchBar -->
     <section class="search">
         <section class="search-section">
-            <input type="text" class="search-input" placeholder="Search">
+            <input type="text" class="search-input" placeholder="Search" id="SEARCH_INPUT">
             <span class="searchIcon">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </span>
@@ -78,40 +79,32 @@
 
     <!-- Main Section -->
     <main class="main">
-        <div class="card">
-            <section class="left pl-2">
-                1/08/2024
-            </section>
-            <section class="right">
-                <div class="view"><a href="#">VIEW</a></div>
-                <span></span>
-                <div class="action">Cancle By Patient</div>
-            </section>
-        </div>
-        <div class="card">
-            <section class="left pl-2">
-                2/08/2024
-            </section>
-            <section class="right">
-                <div class="view"><a href="#">VIEW</a></div>
-                <span></span>
-                <div class="action">Cancle By Doctor</div>
-            </section>
-        </div>
-        <div class="card">
-            <section class="left pl-2">
-                10/08/2024
-            </section>
-            <section class="right">
-                <div class="view"><a href="#">VIEW</a></div>
-                <span></span>
-                <div class="action">Approved</div>
-            </section>
-        </div>
 
+        <table class="table text-center">
+            <thead>
+                <tr>
+                    <th>Doctor Name</th>
+                    <th>Apt. Date</th>
+                    <th>Status</th>
+                    <th>Consultancy Fees</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="TBL_BODY">
+
+            </tbody>
+        </table>
     </main>
     <!-- End Main Section -->
+    <!-- Spinner Code  -->
+    <div class="d-flex justify-content-center align-items-center Spinner">
+        <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- End Spinner -->
 
+    <script type="module" src="./js/apt-history.js"></script>
 </body>
 
 </html>

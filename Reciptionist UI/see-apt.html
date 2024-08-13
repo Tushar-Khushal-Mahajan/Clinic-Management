@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../styles/commons/global-css.css">
     <link rel="stylesheet" href="../styles/commons/header.css">
     <link rel="stylesheet" href="./styles/see-apt.css">
+    <link rel="stylesheet" href="../styles/commons/spinner-css.css">
     <title>Patient Appointments</title>
 </head>
 
@@ -26,7 +27,7 @@
     <!-- SearchBar -->
     <section class="search">
         <section class="search-section">
-            <input type="text" class="search-input" placeholder="Search">
+            <input type="text" class="search-input" placeholder="Search" id="SEARCH_INPUT">
             <span class="searchIcon">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </span>
@@ -36,39 +37,31 @@
 
     <!-- Main Section -->
     <main class="main">
-        <div class="card">
-            <section class="left">
-                Tushar Mahajan
-            </section>
-            <section class="right">
-                <div class="view"><a href="#">VIEW</a></div>
-                <span></span>
-                <div class="action">Cancle By Patient</div>
-            </section>
-        </div>
-        <div class="card">
-            <section class="left">
-                Tushar Mahajan
-            </section>
-            <section class="right">
-                <div class="view"><a href="#">VIEW</a></div>
-                <span></span>
-                <div class="action">Cancle By Doctor</div>
-            </section>
-        </div>
-        <div class="card">
-            <section class="left">
-                Tushar Mahajan
-            </section>
-            <section class="right">
-                <div class="view"><a href="#">VIEW</a></div>
-                <span></span>
-                <div class="action">Approved</div>
-            </section>
-        </div>
+        <table class="table text-center">
+            <thead>
+                <tr>
+                    <th>Patient</th>
+                    <th>Doctor</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="TBL_BODY">
 
+            </tbody>
+        </table>
     </main>
     <!-- End Main Section -->
+
+    <!-- Spinner Code  -->
+    <div class="d-flex justify-content-center align-items-center Spinner">
+        <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- End Spinner -->
+    <script type="module" src="./js/see-apt.js"></script>
 </body>
 
 </html>

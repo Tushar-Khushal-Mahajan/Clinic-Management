@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../styles/commons/global-css.css">
     <link rel="stylesheet" href="../Reciptionist UI/styles/doctor-list.css">
     <link rel="stylesheet" href="../Reciptionist UI/styles/see-apt.css">
+    <link rel="stylesheet" href="../styles/commons/spinner-css.css">
 
     <style>
         * {
@@ -59,52 +60,98 @@
             justify-content: center;
             align-items: center;
         }
+
+        table {
+            text-wrap: nowrap;
+        }
+
+
+        @media (max-width:550px) {
+            tr {
+                display: flex;
+                flex-direction: column;
+            }
+
+
+            td {
+                width: 100%;
+            }
+
+            td:nth-child(odd) {
+                font-weight: bold;
+            }
+
+            td:nth-child(even) {
+                margin-left: 20px;
+            }
+        }
     </style>
 </head>
 
 <body>
     <!-- Header section -->
     <header class="header">
-        <div class="icon">
+        <div class="icon" id="BACK_BTN">
             <a href="#">
                 <i class="fa fa-chevron-left" aria-hidden="true"></i>
             </a>
-        </div>
-        <div class="history-btn">
+        </div><br><br>
+        <div class="history-btn" id="VIEW_HISTORY">
             <span>View Patient History</span>
         </div>
     </header>
     <!-- End Header -->
-
+    <br>
     <h1 class="text-center font-weight-bold">Prescription</h1>
 
+    <br>
+
     <!-- table Section -->
-    <table class="table col-lg-8 col-sm-12 m-2">
-        <tr>
-            <td>Patient Name :</td>
-            <td>Tushar Mahajan</td>
-        </tr>
-        <tr>
-            <td>Email :</td>
-            <td>tushar@gmail.com</td>
-        </tr>
-        <tr>
-            <td>Contact :</td>
-            <td>8654862024</td>
-        </tr>
-        <tr>
-            <td>Id :</td>
-            <td>2e8654</td>
-        </tr>
-        <tr>
-            <td>User Msg :</td>
-            <td>Headache</td>
-        </tr>
-        <tr>
-            <td>Dr Prescription :</td>
-            <td>Saridon 1-1-1</td>
-        </tr>
-    </table>
+    <center>
+
+        <table class="table col-lg-8 col-sm-12 m-2">
+            <tr>
+                <td>Patient Name :</td>
+                <td id="P_NAME"></td>
+            </tr>
+            <tr>
+                <td>Email :</td>
+                <td id="P_EMAIL"></td>
+            </tr>
+            <tr>
+                <td>Contact :</td>
+                <td id="P_MOBILE"></td>
+            </tr>
+            <tr>
+                <td>Id :</td>
+                <td id="APT_ID"></td>
+            </tr>
+            <tr>
+                <td>Date :</td>
+                <td id="APT_DATE"></td>
+            </tr>
+            <tr>
+                <td>User Msg :</td>
+                <td id="P_MSG"></td>
+            </tr>
+            <tr>
+                <td>Dr Prescription :</td>
+                <td id="PRESCRIPTION"></td>
+            </tr>
+            <tfoot id="TBL_FOOTER">
+
+            </tfoot>
+        </table>
+    </center>
+    <!-- Spinner Code  -->
+    <div class="d-flex justify-content-center align-items-center Spinner">
+        <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- End Spinner -->
+
+    <script type="module" src="./js/apt-details.js"></script>
 </body>
 
 </html>

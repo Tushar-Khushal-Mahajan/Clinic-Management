@@ -45,6 +45,8 @@
 
     text-wrap: nowrap;
 
+    overflow-x: scroll;
+
     margin: 20px;
 }
 
@@ -61,6 +63,14 @@
 .main table tr td .pay-bill {
     background-color: var(--first-color);
     color: white;
+}
+
+.warn {
+    color: var(--warning);
+}
+
+.complete {
+    color: var(--first-color);
 }
 
 @media (max-width:550px) {

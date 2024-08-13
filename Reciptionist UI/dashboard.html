@@ -16,6 +16,13 @@
 </head>
 
 <body>
+
+    <script type="module">
+        import { checkAuth } from "./js/auth/check-receptAuth.js";
+        checkAuth();
+    </script>
+
+
     <!-- Header Section -->
     <header class="header">
         <a href="#">Home</a>
@@ -45,9 +52,9 @@
             </h3>
         </div>
         <div class="card">
-            <h2>Manage Doctor</h2>
-            <h3><a href="delete-doctor.html">
-                    Delete Doctor
+            <h2>Add Doctor</h2>
+            <h3><a href="add-doctor.html">
+                    Add Doctor
                 </a>
             </h3>
         </div>
@@ -59,8 +66,6 @@
             </h3>
         </div>
     </main>
-
-
 </body>
 
 </html>

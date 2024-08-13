@@ -1,0 +1,152 @@
+**** Data Structure :- ****
+
+patient = {
+	p_id{
+		name : ---,
+		email : --,
+		password : --,
+		mobile : --- 
+	}
+}
+
+Doctor : {
+	d_id{
+		name : --,
+		email : --,
+		specification : --,
+		Fees : --,
+		Password : --
+	}
+}
+
+appointment = {
+	a_id{
+		date : --,
+		status : --,
+		Action : --,
+		Prescription : ----,
+		p_id : p_id,
+		d_id : d_id	
+	}
+}
+
+
+*** Find appointment by Patient-id or doctor-id ***
+
+const patientId = 'your-patient-id';
+const doctorId = 'your-doctor-id';
+
+// Query by patient-id
+dbRef.orderByChild('patient-id').equalTo(patientId).once('value', (snapshot) => {
+    if (snapshot.exists()) {
+        console.log('Appointments for patient:', snapshot.val());
+    } else {
+        console.log('No appointments found for this patient.');
+    }
+});
+
+// Query by doctor-id
+dbRef.orderByChild('doctor-id').equalTo(doctorId).once('value', (snapshot) => {
+    if (snapshot.exists()) {
+        console.log('Appointments for doctor:', snapshot.val());
+    } else {
+        console.log('No appointments found for this doctor.');
+    }
+});
+
+
+
+********** UNIQUE ID FOR APPOINTMENTS ***************
+let date = new Date();
+		
+let aId = date.getTime();
+
+******* DELETE RECORD FROM FIREBASE************ 
+import { getDatabase, ref, remove } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js";
+
+function deleteRecord(path) {
+    const db = getDatabase();
+    const recordRef = ref(db, path);
+
+    remove(recordRef)
+        .then(() => {
+            console.log('Record deleted successfully');
+        })
+        .catch((error) => {
+            console.error('Error deleting record:', error);
+        });
+}
+
+// Example usage: Deleting a specific appointment
+deleteRecord('appointments/appointmentId');
+
+
+*********** ALL PREV. CODE OF GETAPTBYUID *****************
+let aptTabelBody = document.getElementById("TBL_BODY");
+        aptTabelBody.innerHTML = '';
+
+
+        const dbRef = ref(getDatabase(), 'appointments'); // Reference to the correct path in the database
+
+        const queryRef = query(dbRef, orderByChild('pId'), equalTo(pId));
+
+        get(queryRef).then((snapshot) => {
+
+            // console.log('Appointments for patient:', snapshot.val());
+
+            // Iterate Appointments one by one
+            Object.entries(snapshot.val()).forEach((aptObj) => {
+
+                // fetch doctor id
+                let dId = aptObj[1].dId;
+
+
+                // find dr name by dId
+                const dbRef = ref(getDatabase());
+                get(child(dbRef, `doctors/${dId}`)).then((snapshot) => {
+
+                    let drName = snapshot.val().name;
+                    let fees = snapshot.val().fees;
+
+                    let ACTION;
+                    if (aptObj[1].status === "Pending") {
+                        ACTION = `<button class="cancle-btn" aptId = '${aptObj[0]}'">
+                                            Cancle
+                                  </button>`;
+                    } else if (aptObj[1].status === "Complete") {
+                        ACTION = `<p class="complete">${aptObj[1].status}</p>`;
+                    } else {
+                        ACTION = `<p class="warn">${aptObj[1].Action}</p>`;
+                    }
+
+                    aptTabelBody.innerHTML += `
+                    <tr>
+                            <td>${drName}</td>
+                            <td>${aptObj[1].date}</td>
+                            <td>${aptObj[1].status}</td>
+                            <td>${fees}</td>
+                            <td>${ACTION}</td>
+                    </tr>
+                    `;
+
+                    // Add event listener to the "Cancel" button after it has been added to the DOM
+                    if (aptObj[1].status === "Pending") {
+                        const cancelBtn = aptTabelBody.querySelectorAll('.cancle-btn');
+
+                        cancelBtn.forEach((btn) => {
+                            btn.addEventListener('click', (e) => { cancleApt(e, pId) });
+                        });
+                    }
+
+
+                }).catch((error) => {
+                    console.error(error);
+                });
+
+                // console.log(aptObj);
+            });
+
+
+        }).catch((error) => {
+            console.error('Error fetching data:', error);
+        });

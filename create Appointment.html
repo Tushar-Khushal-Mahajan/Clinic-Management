@@ -29,32 +29,44 @@
             <img src="./images/dr2.gif" />
         </section>
         <section class="form-section">
-            <form id="APT-FORM">
+            <form id="APT_FORM">
                 <div class="form-group">
                     <label for="SEPECIALIZATION_MENU">Specialization : </label>
-                    <select name="" class="form-control" id="SEPECIALIZATION_MENU">
-                        <option value="">General</option>
-                        <option value="">Cardiologiest</option>
+                    <select name="Specialization" class="form-control" id="SEPECIALIZATION_MENU">
+                        <option value="general">General</option>
+                        <option value="pediatrician">Pediatrician</option>
+                        <option value="cardiologist">Cardiologist</option>
+                        <option value="dermatologist">Dermatologist</option>
+                        <option value="ob-gyn">Gynecologist/Obstetrician</option>
+                        <option value="orthopedic-surgeon">Orthopedic Surgeon</option>
+                        <option value="neurologist">Neurologist</option>
+                        <option value="psychiatrist">Psychiatrist</option>
+                        <option value="oncologist">Oncologist</option>
+                        <option value="endocrinologist">Endocrinologist</option>
                     </select>
                 </div>
+
                 <div class="form-group">
-                    <label for="DOCTOR_MENU">Specialization : </label>
-                    <select name="" class="form-control" id="DOCTOR_MENU">
-                        <option value="">Bharat</option>
-                        <option value="">XYZ</option>
+                    <label for="DOCTOR_MENU">Doctor : </label>
+                    <select name="did" class="form-control" id="DOCTOR_MENU">
+
                     </select>
                 </div>
+
                 <div class="form-group">
-                    <label for="MESSAGE">Specialization : </label>
-                    <textarea id="MESSAGE" class="form-control"></textarea>
+                    <label for="MESSAGE">Description : </label>
+                    <textarea id="MESSAGE" class="form-control" name="Prescription"></textarea>
                 </div>
                 <div class="form-group btn-section">
                     <button class="btn" type="submit">Submit</button>
-                    <button class="btn" type="reset">reset</button>
+                    <button class="btn" type="reset" id="RESET_BTN">reset</button>
                 </div>
             </form>
         </section>
     </main>
+
+
+    <script type="module" src="./js/create-apt.js"></script>
 </body>
 
 </html>

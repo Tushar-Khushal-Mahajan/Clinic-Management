@@ -25,43 +25,65 @@
 
             <!-- Login Form -->
             <form id="Login-Form">
-                <div class="field-container">
-                    <input type="email" class="input-field" required />
-                    <label class="label">Email</label>
-                </div>
-                <div class="field-container">
-                    <input type="password" class="input-field" required />
-                    <label class="label">Password</label>
-                </div>
+                <div class="container mt-5">
+                    <!-- Horizontal Strip -->
+                    <div class="d-flex flex-wrap justify-content-end radio-btns">
 
-                <p>Don't have an account ? <a href="#" onclick="Toggle('login')">Register</a></p>
+                        <div class="p-2">
+                            <input type="radio" id="radio1" name="user" value="patients" checked>
+                            <label for="radio1">Patient</label>
+                        </div>
 
-                <div class="btn">
-                    <button type="submit">Submit</button>
-                    <button type="reset">Clear</button>
+                        <div class="p-2">
+                            <input type="radio" id="radio2" name="user" value="doctors">
+                            <label for="radio2">Doctor</label>
+                        </div>
+
+                        <div class="p-2">
+                            <input type="radio" id="radio3" name="user" value="Receptionist">
+                            <label for="radio3">Receptionist</label>
+                        </div>
+                    </div>
+                    <!-- End horizontal Strip -->
+                    <div class="field-container">
+                        <input type="email" class="input-field" name="email" required />
+                        <label class="label">Email</label>
+                    </div>
+                    <div class="field-container">
+                        <input type="password" class="input-field" name="password" required />
+                        <label class="label">Password</label>
+                    </div>
+
+                    <p>Don't have an account ? <a href="#" onclick="Toggle('login')">Register</a></p>
+
+                    <div class="btn">
+                        <button type="submit">Submit</button>
+                        <button type="reset">Clear</button>
+                    </div>
                 </div>
             </form>
+
 
             <!-- Register Form -->
             <form id="Register-Form">
                 <div class="field-container">
-                    <input type="text" class="input-field" required />
+                    <input type="text" class="input-field" name="name" required />
                     <label class="label">Enter Name</label>
                 </div>
                 <div class="field-container">
-                    <input type="email" class="input-field" required />
+                    <input type="email" class="input-field" name="email" required />
                     <label class="label">Email</label>
                 </div>
                 <div class="field-container">
-                    <input type="number" class="input-field" required />
+                    <input type="number" class="input-field" name="mobile" required />
                     <label class="label">Mobile No</label>
                 </div>
                 <div class="field-container">
-                    <input type="password" class="input-field" required />
+                    <input type="password" class="input-field" name="password" required />
                     <label class="label">Password</label>
                 </div>
                 <div class="field-container">
-                    <input type="password" class="input-field" required />
+                    <input type="password" class="input-field" name="confirm_password" required />
                     <label class="label">Confirm Password</label>
                 </div>
 
@@ -72,6 +94,7 @@
                     <button type="reset">Clear</button>
                 </div>
             </form>
+
         </section>
         <section class="image-section">
             <img src="./images/login.gif" alt="">
@@ -79,6 +102,7 @@
     </main>
 
 
+    <script type="module" src="./js/login-module.js"></script>
     <script>
         function Toggle(name) {
             if (name == "login") {

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./styles/commons/global-css.css">
     <link rel="stylesheet" href="./styles/commons/header.css">
     <link rel="stylesheet" href="./styles/my-appointment.css">
+    <link rel="stylesheet" href="./styles/commons/spinner-css.css">
 
     <title>My Appointments</title>
 </head>
@@ -27,7 +28,7 @@
 
     <section class="search">
         <section class="search-section">
-            <input type="text" class="search-input" placeholder="Search">
+            <input type="text" class="search-input" placeholder="Search" id="SEARCH_INPUT">
             <span class="searchIcon">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </span>
@@ -35,60 +36,31 @@
     </section>
 
     <main class="main">
-        <table class="table">
-            <tr>
-                <th>Doctor Name</th>
-                <th>Apt. Date</th>
-                <th>Status</th>
-                <th>Consultancy Fees</th>
-                <th>Action</th>
-            </tr>
-            <tr>
-                <td>Amit</td>
-                <td>08/08/2024</td>
-                <td>Pending</td>
-                <td>200</td>
-                <td>
-                    <button class="cancle-btn">
-                        Cancle
-                    </button>
-                </td>
-            </tr>
+        <table class="table text-center">
+            <thead>
+                <tr>
+                    <th>Doctor Name</th>
+                    <th>Apt. Date</th>
+                    <th>Status</th>
+                    <th>Consultancy Fees</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="TBL_BODY">
 
-            <tr>
-                <td>Amit</td>
-                <td>08/08/2024</td>
-                <td>Pending</td>
-                <td>200</td>
-                <td>
-                    Cancle By Doctor
-                </td>
-            </tr>
-
-            <tr>
-                <td>Amit</td>
-                <td>08/08/2024</td>
-                <td>Pending</td>
-                <td>200</td>
-                <td>
-                    <button class="pay-bill">
-                        Pay Bill
-                    </button>
-                </td>
-            </tr>
-            <tr>
-                <td>Amit</td>
-                <td>08/08/2024</td>
-                <td>Pending</td>
-                <td>200</td>
-                <td>
-                    <button class="pay-bill">
-                        View Prescription
-                    </button>
-                </td>
-            </tr>
+            </tbody>
         </table>
     </main>
+
+    <!-- Spinner Code  -->
+    <div class="d-flex justify-content-center align-items-center Spinner">
+        <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- End Spinner -->
+
+    <script type="module" src="./js/my-appointments.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Radio Button Strip</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .radio-btns input[type="radio"] {
+            display: none;
+        }
+
+        .radio-btns label {
+            padding: 10px 20px;
+            margin: 0 5px;
+            border: 1px solid #007bff;
+            border-radius: 5px;
+            cursor: pointer;
+            color: #007bff;
+        }
+
+        .radio-btns input[type="radio"]:checked+label {
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <!-- Horizontal Strip -->
+        <div class="d-flex justify-content-center radio-btns">
+            <!-- Option 1 -->
+            <div class="p-2">
+                <input type="radio" id="radio1" name="options">
+                <label for="radio1">Option 1</label>
+            </div>
+            <!-- Option 2 -->
+            <div class="p-2">
+                <input type="radio" id="radio2" name="options">
+                <label for="radio2">Option 2</label>
+            </div>
+            <!-- Option 3 -->
+            <div class="p-2">
+                <input type="radio" id="radio3" name="options">
+                <label for="radio3">Option 3</label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

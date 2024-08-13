@@ -54,7 +54,9 @@
     text-wrap: nowrap;
 }
 
-.main table tr td button {
+.main table tr td button,
+.main table tr td a {
+    text-decoration: none;
     padding: 2px 5px;
     background-color: var(--secondary-color);
     color: white;

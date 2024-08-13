@@ -1,0 +1,19 @@
+.Spinner {
+    width: 100% !important;
+    height: 100% !important;
+
+    position: absolute !important;
+
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    backdrop-filter: blur(5px);
+
+}
+
+.hide-spinner {
+    display: none !important;
+}

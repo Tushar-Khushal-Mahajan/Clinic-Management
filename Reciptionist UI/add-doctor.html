@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../styles/commons/global-css.css">
+    <link rel="stylesheet" href="../styles/commons/header.css">
+    <link rel="stylesheet" href="./styles/doctor-list.css">
+    <title>Delete Doctor</title>
+
+    <style>
+        form {
+            padding: 10px;
+            border: 1px solid black;
+            box-shadow: 0px 0px 10px black;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <a href="dashboard.html">Home</a>
+        <span></span>
+        <a href="#" class="active">Add Doctor</a>
+    </header>
+    <!-- End Header -->
+
+    <!-- Main Section -->
+    <main class="main">
+        <form id="ADD_DOCTOR" class="col-lg-5 offset-lg-3">
+            <div class="form-group">
+                <label for="NAME">Dr. Name</label>
+                <input type="text" class="form-control" id="NAME" name="name">
+            </div>
+            <div class="form-group">
+                <label for="EMAIL">Email</label>
+                <input type="email" class="form-control" id="EMAIL" name="email">
+            </div>
+            <div class="form-group">
+                <label for="">specification</label>
+                <select class="form-control" name="specification">
+                    <option value="general">General</option>
+                    <option value="pediatrician">Pediatrician</option>
+                    <option value="cardiologist">Cardiologist</option>
+                    <option value="dermatologist">Dermatologist</option>
+                    <option value="ob-gyn">Gynecologist/Obstetrician</option>
+                    <option value="orthopedic-surgeon">Orthopedic Surgeon</option>
+                    <option value="neurologist">Neurologist</option>
+                    <option value="psychiatrist">Psychiatrist</option>
+                    <option value="oncologist">Oncologist</option>
+                    <option value="endocrinologist">Endocrinologist</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="FEES">Fees</label>
+                <input type="number" class="form-control" id="FEES" name="fees">
+            </div>
+            <div class="form-group">
+                <label for="PASSWORD">Password</label>
+                <input type="password" class="form-control" id="PASSWORD" name="password">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="form-control btn btn-success"> Submit </button>
+                <button type="reset" class="form-control mt-2 btn btn-warning" id="RESEAT_BTN"> Clear </button>
+            </div>
+        </form>
+    </main>
+    <!-- End Main Section -->
+
+    <script type="module" src="./js/addDoctor.js"></script>
+</body>
+
+</html>

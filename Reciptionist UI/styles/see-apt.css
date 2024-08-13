@@ -69,7 +69,9 @@
     box-shadow: 0px 0px 5px gray;
 }
 
-.main .card .left {}
+.main .card .left::first-letter {
+    text-transform: uppercase;
+}
 
 .main .card .right {
 
